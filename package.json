@@ -1,0 +1,31 @@
+{
+  "name": "meadowlark",
+  "version": "1.0.0",
+  "description": "book study",
+  "main": "meadowlark.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0"
+  },
+  "devDependencies": {
+    "zombie": "^5.0.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node meadowlark.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daejinseok/node_and_book_express.git"
+  },
+  "keywords": [
+    "node",
+    "express"
+  ],
+  "author": "daejin.seok@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daejinseok/node_and_book_express/issues"
+  },
+  "homepage": "https://github.com/daejinseok/node_and_book_express#readme"
+}
