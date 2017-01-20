@@ -1,7 +1,8 @@
 const express = require('express'),
       app = express(),
       handlebars = require('express-handlebars')
-      	.create({ defaultLayout:'main'});
+      	.create({ defaultLayout:'main'}),
+      fortune = require('./lib/fortune.js')
 
 app.engine('handlebars', handlebars.engine)
    .set('view engine', 'handlebars');
@@ -23,8 +24,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/about', (req, res) => {
-    const randomFo = fortunes[Math.floor(Math.random() * fortunes.length)];
-    res.render('about',{fortune: randomFo});
+    res.render('about',{fortune: fortune.getFortune()});
 });
 
 // 404
