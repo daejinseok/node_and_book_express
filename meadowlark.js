@@ -11,20 +11,21 @@ app.set('port', process.env.PORT || 3000);
 
 app.use(express.static(__dirname + '/public'));
 
-const fortunes = [
-    'aaaaaaa',
-    'bbbbbb',
-    'cccccc',
-    'dddddd',
-    'eeeeee'
-];
+
+app.use((req, res, next) => {
+    res.locals.showTests = app.get('env') !== 'production' && 
+        req.query.test === '1';
+    next();
+});
 
 app.get('/', (req, res) => {
     res.render('home');
 });
 
 app.get('/about', (req, res) => {
-    res.render('about',{fortune: fortune.getFortune()});
+    res.render('about',{
+        fortune: fortune.getFortune(),
+        pageTestScript: '/qa/tests-about.js'});
 });
 
 // 404
